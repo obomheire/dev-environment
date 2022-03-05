@@ -1,0 +1,26 @@
+npm init --y
+sudo npm install -g nodemon (for server auto run)
+npm install joi (for input validation)
+
+  "scripts": {
+    "start": "node week6_task_demo/app", // npm run start
+    "dev": "nodemon week6_task_demo/app" // npm run dev
+  }
+
+  npm install -g yarn
+  yarn install
+  tsc --init
+  yarn add typescript
+  yarn add @types/node
+  yarn add @types/express
+  yarn add ts-node
+  yarn add -D lite-server
+
+  "outDir": "./dist", // do this in your tsconfig.json
+   "include": ["./**/*.ts"] // add this to your tsconfig.json
+
+   yarn add jest ts-jest types/jest
+   npx ts-jest config:init
+   yarn jest init
+
+   watch mode: tsc --watch
