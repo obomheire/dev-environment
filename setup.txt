@@ -1,4 +1,25 @@
+cd project_name
 npm init --y
+code .
+yarn add -D typescript ts-node nodemon
+yarn add express http-errors dotenv
+npx tsc --init
+mkdir src
+
+package.json:-
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/app.ts",
+    "start": "node ./dist/app.js",
+    "build": "tsc"
+  }
+  tsconfig.json:-
+   "target": "es6",  
+    "module": "commonjs",  
+     "rootDir": "./src", 
+     "moduleResolution": "node",     
+      "outDir": "./dist",    
+   
 sudo npm install -g nodemon (for server auto run)
 npm install joi (for input validation)
 
@@ -24,3 +45,4 @@ npm install joi (for input validation)
    yarn jest init
 
    watch mode: tsc --watch
+   
