@@ -26,7 +26,10 @@ npm install joi (for input validation)
   npm init --y / yarn init -y
   code .
   yarn add -D typescript ts-node nodemon
-  yarn add express http-errors dotenv
+  yarn add express
+  yarn add dotenv
+  yarn add http-errors
+  yarn add @types/http-errors --dev
   npx tsc --init / yarn tsc -init
   mkdir src
   yarn add -D @types/node
