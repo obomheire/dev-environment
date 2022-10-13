@@ -1,26 +1,30 @@
 
 package.json:-
-"scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./src/app.ts",
-    "start": "node ./dist/app.js",
-    "build": "tsc"
-  }
-  tsconfig.json:-
-   "target": "es6",  
+    "dev": "concurrently \"tsc -w\" \"nodemon ./src/app.ts\"",
+    "start": "node dist/app.js",
+    "postinstall": "tsc",
+    "build": "tsc && node dist/app.js"
+  },
+
+tsconfig.json:-
+{
+"compilerOptions": {
+  "target": "es6",  
     "module": "commonjs",  
      "rootDir": "./src", 
      "moduleResolution": "node",     
-      "outDir": "./dist",    
-   
-sudo npm install -g nodemon (for server auto run)
-npm install joi (for input validation)
-
-  "scripts": {
-    "start": "node week6_task_demo/app", // npm run start
-    "dev": "nodemon week6_task_demo/app" // npm run dev
-  }
-
+      "outDir": "./dist", 
+      ---------
+      ---------
+      ---------
+  },
+   "include": ["./**/*.ts"] // To compile all the files in the root folder or
+   "include": ["./src"] // To compile only the file in the src folder
+}
+      
+  sudo npm install -g nodemon (for server auto run)
   npm install -g yarn
   cd project_name
   npm init --y / yarn init -y
@@ -35,14 +39,12 @@ npm install joi (for input validation)
   yarn add -D @types/node
   yarn add -D @types/express
   yarn add concurrently
+
+  yarn add joi (for input validation)
   yarn add -D lite-server
+  yarn add jest ts-jest types/jest
+  npx ts-jest config:init
+  yarn jest init
 
-  "outDir": "./dist", // do this in your tsconfig.json
-   "include": ["./**/*.ts"] // add this to your tsconfig.json
-
-   yarn add jest ts-jest types/jest
-   npx ts-jest config:init
-   yarn jest init
-
-   watch mode: tsc --watch
+   watch mode: tsc --watch // To compile in watch mode
    
